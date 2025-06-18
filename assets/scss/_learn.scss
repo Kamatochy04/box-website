@@ -1,0 +1,116 @@
+.learn {
+  padding: var(--section-padding) 0;
+  background: var(--primary-color);
+
+  &__title {
+    font-size: var(--title-font-size);
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--card-gap);
+  }
+
+  .card {
+    background: #000;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+
+    &.animated {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(var(--accent-color), 0.5);
+    }
+
+    &__image {
+      img {
+        width: 100%;
+        height: var(--card-image-height);
+        object-fit: cover;
+      }
+    }
+
+    &__content {
+      padding: var(--card-padding);
+
+      .card__title {
+        font-size: var(--card-title-font-size);
+        font-weight: bold;
+        color: var(--accent-color);
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .card__description {
+        font-size: var(--card-description-font-size);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .learn {
+    padding: var(--section-padding-tablet) 0;
+
+    &__title {
+      font-size: var(--title-font-size-tablet);
+    }
+
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--card-gap-tablet);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .learn {
+    padding: var(--section-padding-mobile) 0;
+
+    &__title {
+      font-size: var(--title-font-size-mobile);
+    }
+
+    &__cards {
+      grid-template-columns: 1fr;
+      gap: var(--card-gap-mobile);
+    }
+
+    .card {
+      &__image {
+        img {
+          height: var(--card-image-height-mobile);
+        }
+      }
+
+      &__content {
+        padding: var(--card-padding-mobile);
+
+        .card__title {
+          font-size: var(--card-title-font-size-mobile);
+        }
+
+        .card__description {
+          font-size: var(--card-description-font-size-mobile);
+        }
+      }
+    }
+  }
+}

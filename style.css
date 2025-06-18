@@ -3,11 +3,77 @@
 @import url("./assets/scss/_header.scss");
 @import url("./assets/scss/_main.scss");
 @import url("./assets/scss/_loader.scss");
+@import url("./assets/scss/_learn.scss");
+@import url("./assets/scss/_form.scss");
+@import url("./assets/scss/_couch.scss");
+@import url("./assets/scss/_footer.scss");
+@import url("./assets/scss/_pricing.scss");
+
 :root {
   --primary-color: #1a1a1a;
   --accent-color: #e31e24;
   --text-color: #ffffff;
   --secondary-color: #c21717;
+  --card-border-radius: 10px;
+  --card-image-height: 200px;
+  --card-image-height-mobile: 180px;
+  --section-padding: 80px;
+  --section-padding-tablet: 60px;
+  --section-padding-mobile: 40px;
+  --title-font-size: 2.5rem;
+  --title-font-size-tablet: 2rem;
+  --title-font-size-mobile: 1.8rem;
+  --card-title-font-size: 1.5rem;
+  --card-title-font-size-mobile: 1.3rem;
+  --card-description-font-size: 1rem;
+  --card-description-font-size-mobile: 0.9rem;
+  --card-gap: 30px;
+  --card-gap-tablet: 20px;
+  --card-gap-mobile: 15px;
+  --card-padding: 20px;
+  --card-padding-mobile: 15px;
+
+  --section-padding: 80px;
+  --section-padding-tablet: 60px;
+  --section-padding-mobile: 40px;
+  --title-font-size: 2.5rem;
+  --title-font-size-tablet: 2rem;
+  --title-font-size-mobile: 1.8rem;
+  --input-border-radius: 8px;
+  --button-padding: 12px 24px;
+  --form-gap: 20px;
+  --form-gap-mobile: 15px;
+  --input-font-size: 1rem;
+  --checkbox-font-size: 0.9rem;
+  --telegram-bg: #0088cc;
+
+  --section-padding: 80px;
+  --section-padding-tablet: 60px;
+  --section-padding-mobile: 40px;
+  --title-font-size: 2.5rem;
+  --title-font-size-tablet: 2rem;
+  --title-font-size-mobile: 1.8rem;
+  --card-border-radius: 10px;
+  --card-gap: 30px;
+  --card-gap-tablet: 20px;
+  --card-gap-mobile: 15px;
+  --card-padding: 20px;
+  --card-image-height: 300px;
+  --card-title-font-size: 1.8rem;
+  --card-text-font-size: 1rem;
+  --card-text-font-size-mobile: 0.9rem;
+  --social-icon-size: 1.5rem;
+
+  --footer-padding: 60px;
+  --footer-padding-mobile: 40px;
+  --footer-logo-font-size: 2rem;
+  --footer-subtitle-font-size: 1.5rem;
+  --footer-text-font-size: 1rem;
+  --footer-text-font-size-mobile: 0.9rem;
+  --footer-gap: 40px;
+  --footer-gap-mobile: 20px;
+  --social-icon-size: 1.8rem;
+  --link-hover-scale: 1.05;
 }
 
 * {

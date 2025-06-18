@@ -1,0 +1,166 @@
+.coaches {
+  padding: var(--section-padding) 0;
+  &__title {
+    font-size: var(--title-font-size);
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--card-gap);
+  }
+
+  .coach-card {
+    background: var(--secondary-color);
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+
+    &.animated {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(var(--accent-color), 0.5);
+    }
+
+    &__image {
+      img {
+        width: 100%;
+        height: var(--card-image-height);
+        object-fit: cover;
+      }
+    }
+
+    &__content {
+      padding: var(--card-padding);
+
+      .coach-card__name {
+        font-size: var(--card-title-font-size);
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .coach-card__specialty {
+        font-size: var(--card-text-font-size);
+        color: var(--text-color);
+        margin-bottom: 15px;
+      }
+
+      .coach-card__achievements {
+        list-style: none;
+        margin-bottom: 15px;
+
+        li {
+          font-size: var(--card-text-font-size);
+          color: var(--text-color);
+          line-height: 1.6;
+          padding-left: 15px;
+          position: relative;
+
+          &::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+          }
+
+          strong {
+            color: var(--text-color);
+          }
+        }
+      }
+
+      .coach-card__education,
+      .coach-card__experience {
+        font-size: var(--card-text-font-size);
+        color: var(--text-color);
+        margin-bottom: 10px;
+
+        strong {
+          color: var(--text-color);
+        }
+      }
+
+      .coach-card__socials {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+
+        .social-link {
+          color: var(--text-color);
+          font-size: var(--social-icon-size);
+          transition: transform 0.3s ease, color 0.3s ease;
+
+          &:hover {
+            transform: scale(1.2);
+            color: var(--accent-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .coaches {
+    padding: var(--section-padding-tablet) 0;
+
+    &__title {
+      font-size: var(--title-font-size-tablet);
+    }
+
+    &__cards {
+      gap: var(--card-gap-tablet);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .coaches {
+    padding: var(--section-padding-mobile) 0;
+
+    &__title {
+      font-size: var(--title-font-size-mobile);
+    }
+
+    &__cards {
+      grid-template-columns: 1fr;
+      gap: var(--card-gap-mobile);
+    }
+
+    .coach-card {
+      &__image {
+        img {
+          height: 250px;
+        }
+      }
+
+      &__content {
+        .coach-card__name {
+          font-size: 1.5rem;
+        }
+
+        .coach-card__specialty,
+        .coach-card__achievements li,
+        .coach-card__education,
+        .coach-card__experience {
+          font-size: var(--card-text-font-size-mobile);
+        }
+      }
+    }
+  }
+}
