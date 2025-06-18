@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Шапка сайта тренера по боксу</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__logo">
+            <span class="logo-text"
+              >ALCHAKOV <br />
+              BOXING <br />
+              CLUB</span
+            >
+            <div class="logo-bottom">Школа бокса | мма</div>
+          </div>
+          <nav class="header__nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#about" class="nav-link">О тренере</a>
+              </li>
+              <li class="nav-item">
+                <a href="#programs" class="nav-link">Программы</a>
+              </li>
+              <li class="nav-item">
+                <a href="#schedule" class="nav-link">Расписание</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contacts" class="nav-link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__phone">
+            <a href="tel:+79991234567" class="phone-link">
+              <i class="fas fa-phone"></i>
+              +7 (999) 123-45-67
+            </a>
+          </div>
+          <button class="burger">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item">
+            <a href="#about" class="mobile-nav-link">О тренере</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="#programs" class="mobile-nav-link">Программы</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="#schedule" class="mobile-nav-link">Расписание</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="#contacts" class="mobile-nav-link">Контакты</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="tel:+79991234567" class="mobile-phone-link">
+              <i class="fas fa-phone"></i>
+              +7 (999) 123-45-67
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="loader">
+      <div class="loader__title">
+        ALCHAKOV <br />
+        BOXING CLUB
+      </div>
+      <div class="loader__sub-title">Твой личный тренер</div>
+    </div>
+
+    <section class="hero">
+      <div class="background-slider">
+        <img
+          src="./assets/images/Box_img-2.jpg"
+          alt="Тренировка по боксу"
+          class="background-slider__image active"
+        />
+        <img
+          src="./assets/images/Box_img.jpg"
+          alt="Тренировка в зале"
+          class="background-slider__image"
+        />
+      </div>
+      <div class="container">
+        <div class="hero__container">
+          <div class="hero__block">
+            <h1 class="hero__title animate-fade-in">
+              <span>Персональный</span> тренер по боксу и функционалу в Москве
+            </h1>
+            <p class="hero__subtitle animate-fade-in" style="--delay: 0.3s">
+              Укрепите тело и дух за 4 недели – индивидуальные тренировки под
+              ваш уровень
+            </p>
+            <a
+              href="#contact"
+              class="hero__cta animate-fade-in"
+              style="--delay: 0.6s"
+              >Записаться на тренировку</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
