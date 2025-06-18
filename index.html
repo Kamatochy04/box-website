@@ -116,6 +116,16 @@
       </div>
     </section>
 
-    <script src="./main.js"></script>
+    <script src="./main.js">
+          const loader = document.querySelector(".loader");
+
+      setTimeout(() => {
+        loader.classList.add("loader--hidden");
+
+        setTimeout(() => {
+          loader.remove();
+        }, 500);
+      }, 3000);
+    </script>
   </body>
 </html>
