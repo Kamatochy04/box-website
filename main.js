@@ -17,14 +17,4 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(changeBackground, 5000);
 
   images[0].classList.add("active");
-
-  const loader = document.querySelector(".loader");
-
-  setTimeout(() => {
-    loader.classList.add("loader--hidden");
-
-    setTimeout(() => {
-      loader.remove();
-    }, 500);
-  }, 3000);
 });
