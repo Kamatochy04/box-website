@@ -6,6 +6,11 @@
   z-index: 100;
   backdrop-filter: blur(5px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.6s ease;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
 
   &__inner {
     display: flex;
@@ -19,7 +24,7 @@
     flex-direction: column;
 
     .logo-text {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: bold;
       color: var(--text-color);
       text-transform: uppercase;
@@ -28,7 +33,7 @@
 
     .logo-bottom {
       color: #fff;
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 90%;
     }

@@ -1,108 +1,180 @@
-.hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("https://source.unsplash.com/1600x900/?boxing,gym") no-repeat
-      center/cover;
-  color: white;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Montserrat:wght@400;500&display=swap");
 
-  &__container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: end;
-    padding-bottom: 100px;
-  }
-  &__block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: end;
-
-    text-align: start;
-  }
-  &__title {
-    line-height: 90%;
-    max-width: 600px;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s forwards;
-    span {
-      color: var(--accent-color);
-    }
-  }
-
-  &__subtitle {
-    font-size: 1rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s forwards;
-    animation-delay: var(--delay, 0s);
-  }
-
-  &__cta {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: inline-block;
-    padding: 12px 30px;
-    background: var(--accent-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s forwards;
-    animation-delay: var(--delay, 0s);
-    transition: background 0.3s;
-
-    &:hover {
-      background: darken(#e31e24, 10%);
-    }
-  }
+:root {
+  --primary-color: #1a1a1a;
+  --accent-color: #e31e24;
+  --text-color: #ffffff;
+  --secondary-color: #c21717;
+  --premium-accent: #d4a017; /* Золотой акцент для премиума */
+  --hero-height: 100vh;
+  --hero-title-font-size: 4.5rem;
+  --hero-title-font-size-tablet: 3rem;
+  --hero-title-font-size-mobile: 2rem;
+  --hero-subtitle-font-size: 1.8rem;
+  --hero-subtitle-font-size-mobile: 1.2rem;
+  --hero-button-padding: 16px 32px;
+  --hero-button-font-size: 1.2rem;
+  --hero-content-max-width: 700px;
 }
 
-.background-slider {
-  position: absolute;
-  width: 100%;
-  height: 100vh; /* или нужная вам высота */
+.hero {
+  position: relative;
+  height: var(--hero-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 
-  &__image {
+  &__background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    // object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    z-index: -1;
+    z-index: 0;
+  }
 
-    &.active {
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 10;
+    background: #00000052;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: var(--hero-content-max-width);
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 1s ease, transform 1s ease;
+
+    &.animated {
       opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  &__title {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+
+    span {
+      color: var(--accent-color);
+      display: inline-block;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--premium-accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s ease;
+      }
+    }
+
+    .animated & span::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &__subtitle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    opacity: 0.85;
+    margin-bottom: 32px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  &__button {
+    z-index: 1000;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: var(--hero-button-font-size);
+    color: var(--text-color);
+    background: var(--accent-color);
+    padding: var(--hero-button-padding);
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      background: var(--secondary-color);
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(var(--accent-color), 0.5);
     }
   }
 }
 
-/* Анимация */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 768px) {
+  .hero {
+    &__title {
+      font-size: var(--hero-title-font-size-tablet);
+      margin-bottom: 20px;
+    }
+
+    &__subtitle {
+      font-size: var(--hero-subtitle-font-size-mobile);
+      margin-bottom: 24px;
+    }
+
+    &__button {
+      padding: 12px 24px;
+      font-size: 1rem;
+    }
   }
 }
 
-/* Задержки для анимации */
-.animate-fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s forwards;
+@media (max-width: 480px) {
+  .hero {
+    &__content {
+      padding: 0 20px;
+    }
+
+    &__title {
+      font-size: var(--hero-title-font-size-mobile);
+      margin-bottom: 16px;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    &__button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
 }

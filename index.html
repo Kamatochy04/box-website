@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Шапка сайта тренера по боксу</title>
+    <title>Тренер по боксу</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -14,14 +14,10 @@
     <header class="header">
       <div class="container">
         <div class="header__inner">
-          <div class="header__logo">
-            <span class="logo-text"
-              >ALCHAKOV <br />
-              BOXING <br />
-              CLUB</span
-            >
-            <div class="logo-bottom">Школа бокса | мма</div>
-          </div>
+          <a href="/" class="header__logo">
+            <span class="logo-text">Alchakov Boxing</span>
+            <span class="logo-bottom">Тренер чемпионов</span>
+          </a>
           <nav class="header__nav">
             <ul class="nav-list">
               <li class="nav-item">
@@ -31,7 +27,7 @@
                 <a href="#programs" class="nav-link">Программы</a>
               </li>
               <li class="nav-item">
-                <a href="#schedule" class="nav-link">Расписание</a>
+                <a href="#coaches" class="nav-link">Тренеры</a>
               </li>
               <li class="nav-item">
                 <a href="#contacts" class="nav-link">Контакты</a>
@@ -39,19 +35,17 @@
             </ul>
           </nav>
           <div class="header__phone">
-            <a href="tel:+79991234567" class="phone-link">
-              <i class="fas fa-phone"></i>
-              +7 (999) 123-45-67
-            </a>
+            <a href="tel:+79266010077" class="phone-link"
+              ><i class="fas fa-phone"></i> +7 926 601-00-77</a
+            >
           </div>
           <button class="burger">
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
+            <span class="burger-line"></span><span class="burger-line"></span
+            ><span class="burger-line"></span>
           </button>
         </div>
       </div>
-      <div class="mobile-menu">
+      <nav class="mobile-menu">
         <ul class="mobile-nav-list">
           <li class="mobile-nav-item">
             <a href="#about" class="mobile-nav-link">О тренере</a>
@@ -60,30 +54,22 @@
             <a href="#programs" class="mobile-nav-link">Программы</a>
           </li>
           <li class="mobile-nav-item">
-            <a href="#schedule" class="mobile-nav-link">Расписание</a>
+            <a href="#coaches" class="mobile-nav-link">Тренеры</a>
           </li>
           <li class="mobile-nav-item">
             <a href="#contacts" class="mobile-nav-link">Контакты</a>
           </li>
           <li class="mobile-nav-item">
-            <a href="tel:+79991234567" class="mobile-phone-link">
-              <i class="fas fa-phone"></i>
-              +7 (999) 123-45-67
-            </a>
+            <a href="tel:+79266010077" class="mobile-phone-link"
+              ><i class="fas fa-phone"></i> +7 926 601-00-77</a
+            >
           </li>
         </ul>
-      </div>
+      </nav>
     </header>
-    <!-- <div class="loader">
-      <div class="loader__title">
-        ALCHAKOV <br />
-        BOXING CLUB
-      </div>
-      <div class="loader__sub-title">Твой личный тренер</div>
-    </div> -->
 
     <!-- Главный экран  -->
-    <section class="hero">
+    <!-- <section class="hero">
       <div class="background-slider">
         <img
           src="./assets/images/Box_img-2.jpg"
@@ -95,6 +81,17 @@
           alt="Тренировка в зале"
           class="background-slider__image"
         />
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="https://source.unsplash.com/1920x1080/?boxing"
+        >
+          <source src="./assets/video/mainbg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
       <div class="container">
         <div class="hero__container">
@@ -115,59 +112,68 @@
           </div>
         </div>
       </div>
+    </section> -->
+    <section class="hero">
+      <div class="hero__background">
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="./assets/images/boxing-poster.jpg"
+        >
+          <source src="./assets/video/mainbg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="container">
+        <div class="hero__content" data-animation="fade-in">
+          <h1 class="hero__title">
+            <span>Alchakov Boxing</span><br />Тренер чемпионов
+          </h1>
+          <p class="hero__subtitle">
+            Персональные тренировки по боксу и функционалу — только в Москве.
+            Первая тренировка — бесплатно
+          </p>
+        </div>
+      </div>
+      <a href="#signup" class="hero__button">Записаться на тренировку</a>
     </section>
 
     <!-- Научим вас -->
-    <section class="learn" id="learn">
+    <section class="learn" id="programs">
       <div class="container">
-        <h2 class="learn__title">Научим вас</h2>
+        <h2 class="learn__title">Ваши цели — наши направления</h2>
         <div class="learn__cards">
-          <div class="card" data-animation="fade-up">
-            <div class="card__image">
-              <img
-                src="https://source.unsplash.com/400x300/?boxing"
-                alt="Бокс"
-              />
-            </div>
+          <div class="card" data-animation="fade-in">
+            <div class="card__icon"><i class="fas fa-fist-raised"></i></div>
             <div class="card__content">
               <h3 class="card__title">Бокс</h3>
               <p class="card__description">
-                Бокс — это сила, выносливость, гармония с самим собой и даже
-                отчасти философия. Бокс укрепляет волю, воспитывает смелость,
-                находчивость, умение в короткие мгновения оценить самую сложную
-                ситуацию и найти наиболее рациональный выход из трудного
-                положения.
+                Развивайте силу, уверенность и дисциплину. Освойте технику
+                ударов и защиту с чемпионами.
               </p>
             </div>
           </div>
-          <div class="card" data-animation="fade-up">
-            <div class="card__image">
-              <img
-                src="https://source.unsplash.com/400x300/?kickboxing"
-                alt="Кикбоксинг"
-              />
-            </div>
+          <div class="card" data-animation="fade-in">
+            <div class="card__icon"><i class="fas fa-shoe-prints"></i></div>
             <div class="card__content">
               <h3 class="card__title">Кикбоксинг</h3>
               <p class="card__description">
-                Кикбоксинг – вид боевых единоборств, представляющий собой синтез
-                кулачной техники европейского бокса и техники ударов ногами,
-                заимствованной из восточных единоборств (каратэ, тайский бокс,
-                тхэквондо, и др.).
+                Сочетание мощных ударов руками и ногами. Станьте мастером
+                универсальной техники.
               </p>
             </div>
           </div>
-          <div class="card" data-animation="fade-up">
-            <div class="card__image">
-              <img src="https://source.unsplash.com/400x300/?mma" alt="ММА" />
-            </div>
+          <div class="card" data-animation="fade-in">
+            <div class="card__icon"><i class="fas fa-users"></i></div>
             <div class="card__content">
               <h3 class="card__title">ММА</h3>
               <p class="card__description">
-                ММА (от англ. Mixed Martial Arts) – смешанные боевые
-                единоборства, представляющие собой сочетание различных техник,
-                школ и направлений единоборств. ММА является полноконтактным
-                боем с применением ударной техники и борьбы.
+                Полноконтактный бой: удары, борьба, выносливость. Подготовка к
+                реальным вызовам.
               </p>
             </div>
           </div>
@@ -178,79 +184,70 @@
     <!-- форма обратной связи  -->
     <section class="signup" id="signup">
       <div class="container">
-        <h2 class="signup__title">Запишись на первую бесплатную тренировку!</h2>
-        <form class="signup__form" data-animation="fade-up">
+        <h2 class="signup__title">Начни путь к чемпионству</h2>
+        <p class="signup__subtitle">
+          Запишись на бесплатную тренировку с Артуром Алчаковым
+        </p>
+
+        <form class="signup__form" data-animation="fade-in">
           <div class="form__group">
-            <input
-              type="text"
-              class="form__input"
-              placeholder="Ваше имя"
-              id="name"
-              required
-            />
+            <input type="text" class="form__input" placeholder="Имя" required />
             <input
               type="tel"
               class="form__input"
-              placeholder="Ваш номер телефона"
-              id="phone"
+              placeholder="Телефон"
               required
             />
-            <button type="submit" class="form__button">Отправить заявку</button>
           </div>
+          <button type="submit" class="form__button">Отправить заявку</button>
           <div class="form__checkbox">
-            <input type="checkbox" id="agreement" required />
-            <label for="agreement">
-              Нажимая кнопку «Отправить заявку», вы соглашаетесь с
-              <a href="/privacy-policy" class="checkbox__link"
-                >правилами обработки персональных данных</a
+            <input type="checkbox" id="agree" required />
+            <label for="agree">
+              Нажимая «Отправить заявку», вы соглашаетесь с
+              <a href="#privacy" class="checkbox__link"
+                >правилами обработки данных</a
               >.
             </label>
           </div>
         </form>
-        <div class="signup__telegram" data-animation="fade-up">
-          <a href="https://t.me/coach_boxing" class="telegram__link">
-            <i class="fab fa-telegram-plane"></i>
-            Связаться в Telegram
+        <div class="signup__telegram" data-animation="fade-in">
+          <a href="https://t.me/alchakov_boxing" class="telegram__link">
+            <i class="fab fa-telegram-plane"></i> Связаться в Telegram
           </a>
         </div>
       </div>
     </section>
 
     <!-- О тренерах -->
-
     <section class="coaches" id="coaches">
       <div class="container">
-        <h2 class="coaches__title">Вас будут тренировать</h2>
+        <h2 class="coaches__title">Ваши тренеры — чемпионы</h2>
         <div class="coaches__cards">
-          <div class="coach-card" data-animation="fade-up">
+          <div class="coach-card" data-animation="fade-in">
             <div class="coach-card__image">
-              <img
-                src="https://source.unsplash.com/400x500/?boxing,coach"
-                alt="Ахмед Алчаков"
-              />
+              <img src="./assets/images/ahmed_couch.jpeg" alt="Ахмед Алчаков" />
             </div>
             <div class="coach-card__content">
               <h3 class="coach-card__name">Ахмед Алчаков</h3>
               <p class="coach-card__specialty">
                 Тренер по боксу, кикбоксингу и ММА
               </p>
+              <p class="coach-card__intro">
+                Я помогу вам раскрыть потенциал и достичь вершин!
+              </p>
               <ul class="coach-card__achievements">
-                <li><strong>Победитель турниров по боксу</strong></li>
-                <li><strong>Бронзовый призёр мира по кикбоксингу</strong></li>
-                <li><strong>Чемпион Кубка России по кикбоксингу</strong></li>
                 <li>
-                  <strong>Многократный чемпион Москвы по кикбоксингу</strong>
+                  <i class="fas fa-trophy"></i> Бронзовый призёр мира по
+                  кикбоксингу
                 </li>
-                <li><strong>Чемпион Москвы по К-1</strong></li>
-                <li><strong>Чемпион первенства России по дзюдо</strong></li>
-                <li><strong>Мастер спорта по жиму лёжа</strong></li>
-                <li><strong>Мастер спорта по дзюдо</strong></li>
+                <li><i class="fas fa-trophy"></i> Чемпион Кубка России</li>
+                <li><i class="fas fa-trophy"></i> Мастер спорта по дзюдо</li>
               </ul>
               <p class="coach-card__education">
                 <strong>Высшее спортивное образование</strong>
               </p>
               <p class="coach-card__experience">
-                <strong>Тренерский стаж: 10 лет</strong>
+                <strong>Стаж: 10 лет</strong>
               </p>
               <div class="coach-card__socials">
                 <a href="https://t.me/ahmed_coach" class="social-link"
@@ -265,34 +262,30 @@
               </div>
             </div>
           </div>
-          <div class="coach-card" data-animation="fade-up">
+          <div class="coach-card" data-animation="fade-in">
             <div class="coach-card__image">
-              <img
-                src="https://source.unsplash.com/400x500/?kickboxing,athlete"
-                alt="Артур Алчаков"
-              />
+              <img src="./assets/images/artur.jpg" alt="Артур Алчаков" />
             </div>
             <div class="coach-card__content">
               <h3 class="coach-card__name">Артур Алчаков</h3>
-              <p class="coach-card__specialty">Тренер по боксу, кикбоксингу</p>
+              <p class="coach-card__specialty">Тренер по боксу и кикбоксингу</p>
+              <p class="coach-card__intro">
+                Я действующий спортсмен и знаю, как привести вас к победе!
+              </p>
               <ul class="coach-card__achievements">
-                <li><strong>Призёр турниров по кикбоксингу и боксу</strong></li>
                 <li>
-                  <strong>Победитель первенств турниров по кикбоксингу</strong>
+                  <i class="fas fa-trophy"></i> Победитель первенства Москвы
                 </li>
                 <li>
-                  <strong>Победитель первенства Москвы по кикбоксингу</strong>
+                  <i class="fas fa-trophy"></i> Призёр турниров по кикбоксингу
                 </li>
-                <li>
-                  <strong>Победитель различных соревнований по дзюдо</strong>
-                </li>
-                <li><strong>Действующий спортсмен</strong></li>
+                <li><i class="fas fa-trophy"></i> Действующий спортсмен</li>
               </ul>
               <p class="coach-card__education">
                 <strong>Высшее спортивное образование</strong>
               </p>
               <p class="coach-card__experience">
-                <strong>Тренерский стаж: более 7 лет</strong>
+                <strong>Стаж: 7+ лет</strong>
               </p>
               <div class="coach-card__socials">
                 <a href="https://t.me/artur_coach" class="social-link"
@@ -311,63 +304,41 @@
       </div>
     </section>
 
+    <!-- цены -->
     <section class="pricing" id="pricing">
       <div class="container">
-        <h2 class="pricing__title">Выберите тип занятий</h2>
-        <h3 class="pricing__subtitle">Наш прайс</h3>
-        <p class="pricing__intro">
-          Стандартные тренировки по кикбоксингу, боксу и ММА для взрослых
-        </p>
+        <h2 class="pricing__title">Выберите свою программу</h2>
+        <h3 class="pricing__subtitle">Цены и форматы тренировок</h3>
         <div class="pricing__cards">
-          <div class="price-card" data-animation="fade-up">
+          <div class="price-card" data-animation="fade-in">
             <h4 class="price-card__title">Мини-группа</h4>
-            <p class="price-card__price">10 000 руб.</p>
-            <p class="price-card__description">
-              В стоимость обучения входит: 8 — 12 персональных тренировок по 2
-              часа, уроки в группах по 4 — 6 человека, расписание согласованное
-              с тренером. Примерная тренировка: разминка, работа на лапах с
-              тренером, постановка удара, разучивание комбинаций, работа на
-              мешках, бой с тенью, спарринг (по желанию), и в конце набор
-              общеукрепляющих упражнений.
+            <p class="price-card__subtitle">
+              Для тех, кто хочет максимум внимания
             </p>
+            <p class="price-card__price">10 000 ₽/мес</p>
+            <ul class="price-card__benefits">
+              <li><i class="fas fa-check"></i> 8–12 тренировок по 2 часа</li>
+              <li><i class="fas fa-check"></i> Группы 4–6 человек</li>
+              <li><i class="fas fa-check"></i> Персональный подход</li>
+              <li><i class="fas fa-check"></i> Работа на лапах, спарринг</li>
+            </ul>
             <a href="#signup" class="price-card__button">Записаться</a>
           </div>
-          <div class="price-card" data-animation="fade-up">
+          <div class="price-card" data-animation="fade-in">
             <h4 class="price-card__title">Детские группы</h4>
-            <p class="price-card__price">4 000 руб.</p>
-            <p class="price-card__description">
-              В стоимость обучения входит: 12 тренировок по 1,5 часа в месяц,
-              занятия в группах по 10 - 20 человек со спортсменами-ровесниками,
-              расписание согласованное с тренером, возможность перенести
-              тренировку на другой день и время. Примерная тренировка для
-              начинающих: разминка, работа в парах, постановка удара,
-              разучивание комбинаций, работа на мешках, бой с тенью, спарринг
-              (по желанию), и в конце набор общеукрепляющих упражнений.
-            </p>
+            <p class="price-card__subtitle">Для юных чемпионов</p>
+            <p class="price-card__price">4 000 ₽/мес</p>
+            <ul class="price-card__benefits">
+              <li><i class="fas fa-check"></i> 12 тренировок по 1,5 часа</li>
+              <li><i class="fas fa-check"></i> Группы 10–20 человек</li>
+              <li><i class="fas fa-check"></i> Гибкое расписание</li>
+              <li><i class="fas fa-check"></i> Техника и дисциплина</li>
+            </ul>
             <a href="#signup" class="price-card__button">Записаться</a>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const cards = document.querySelectorAll("[data-animation]");
-        const checkVisibility = () => {
-          cards.forEach((card) => {
-            const rect = card.getBoundingClientRect();
-            if (
-              rect.top < window.innerHeight * 0.8 &&
-              !card.classList.contains("animated")
-            ) {
-              card.classList.add("animated");
-            }
-          });
-        };
-        window.addEventListener("scroll", checkVisibility);
-        checkVisibility();
-      });
-    </script> -->
 
     <footer class="footer">
       <div class="container">
@@ -428,51 +399,30 @@
             </div>
           </div>
         </div>
-        <!-- <div class="footer__bottom">
-          <p class="footer__copyright" data-animation="fade-up">
-            &copy; 2025 Alchakov Boxing. Все права защищены.
-          </p>
-        </div> -->
       </div>
     </footer>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const images = document.querySelectorAll(".background-slider__image");
-        let currentIndex = 0;
+        const header = document.querySelector(".header");
+        let lastScrollTop = 0;
 
-        function changeBackground() {
-          // Убираем активный класс у текущего изображения
-          images[currentIndex].classList.remove("active");
+        window.addEventListener("scroll", () => {
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
 
-          // Переходим к следующему изображению
-          currentIndex = (currentIndex + 1) % images.length;
+          if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+            // Скролл вниз и ниже высоты шапки
+            header.classList.add("hidden");
+          } else {
+            // Скролл вверх или вверху страницы
+            header.classList.remove("hidden");
+          }
 
-          // Добавляем активный класс новому изображению
-          images[currentIndex].classList.add("active");
-        }
-
-        // Меняем изображение каждые 5 секунд
-        setInterval(changeBackground, 5000);
-
-        images[0].classList.add("active");
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Не допускаем отрицательного значения
+        });
 
         const cards = document.querySelectorAll(".card[data-animation]");
-
-        const checkVisibility = () => {
-          cards.forEach((card) => {
-            const rect = card.getBoundingClientRect();
-            if (
-              rect.top < window.innerHeight * 0.8 &&
-              !card.classList.contains("animated")
-            ) {
-              card.classList.add("animated");
-            }
-          });
-        };
-
-        window.addEventListener("scroll", checkVisibility);
-        checkVisibility(); // Проверка при загрузке
 
         const animatedElements = document.querySelectorAll("[data-animation]");
         const checkVisibilityInput = () => {

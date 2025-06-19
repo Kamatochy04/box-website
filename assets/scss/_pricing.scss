@@ -1,10 +1,34 @@
+:root {
+  --primary-color: #1a1a1a;
+  --accent-color: #e31e24;
+  --text-color: #ffffff;
+  --secondary-color: #c21717;
+  --premium-accent: #d4a017;
+  --section-padding: 100px;
+  --section-padding-tablet: 80px;
+  --section-padding-mobile: 60px;
+  --title-font-size: 3rem;
+  --title-font-size-tablet: 2.5rem;
+  --title-font-size-mobile: 2rem;
+  --subtitle-font-size: 2rem;
+  --card-gap: 40px;
+  --card-padding: 30px;
+  --card-title-font-size: 1.8rem;
+  --card-price-font-size: 2rem;
+  --card-text-font-size: 1rem;
+  --card-text-font-size-mobile: 0.9rem;
+  --button-padding: 16px 32px;
+  --button-font-size: 1.2rem;
+}
+
 .pricing {
   padding: var(--section-padding) 0;
   background: var(--primary-color);
 
   &__title {
+    font-family: "Oswald", sans-serif;
     font-size: var(--title-font-size);
-    font-weight: bold;
+    font-weight: 700;
     color: var(--text-color);
     text-align: center;
     margin-bottom: 20px;
@@ -13,19 +37,12 @@
   }
 
   &__subtitle {
+    font-family: "Montserrat", sans-serif;
     font-size: var(--subtitle-font-size);
-    font-weight: bold;
-    color: var(--accent-color);
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  &__intro {
-    font-size: var(--card-text-font-size);
-    color: var(--text-color);
+    font-weight: 500;
+    color: var(--premium-accent);
     text-align: center;
     margin-bottom: 40px;
-    opacity: 0.8;
   }
 
   &__cards {
@@ -35,107 +52,90 @@
   }
 
   .price-card {
-    position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    background: #00000042;
-    padding: 10px;
-    border-radius: 10px;
-    // background: linear-gradient(
-    //   135deg,
-    //   rgba(var(--card-gradient-start), 0.7),
-    //   rgba(var(--card-gradient-end), 0.7)
-    // );
-    // border: var(--card-border-width) solid var(--accent-color);
-    // border-radius: var(--card-border-radius);
-    // padding: var(--card-padding);
-    // text-align: center;
-    // transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-    // opacity: 0;
-    // transform: translateY(50px) rotate(-2deg);
+    background: linear-gradient(
+      135deg,
+      rgba(var(--primary-color), 0.9),
+      rgba(var(--secondary-color), 0.7)
+    );
+    backdrop-filter: blur(8px);
+    border: 2px solid var(--premium-accent);
+    border-radius: 12px;
+    padding: var(--card-padding);
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
 
     &.animated {
       opacity: 1;
-      transform: translateY(0) rotate(0deg);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(0) scale(1);
     }
 
     &:hover {
-      transform: scale(1.05) rotate(0deg);
-      background: #00000080;
-
-      box-shadow: 0 0 20px rgba(var(--accent-color), 0.6);
-    }
-
-    &::before {
-      content: "\f091"; /* Иконка боксёрских перчаток из Font Awesome */
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 2rem;
-      color: rgba(var(--accent-color), 0.3);
-      transition: color 0.4s ease;
-    }
-
-    &:hover::before {
-      color: var(--accent-color);
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(var(--accent-color), 0.5);
     }
 
     &__title {
+      font-family: "Oswald", sans-serif;
       font-size: var(--card-title-font-size);
-      font-weight: bold;
+      font-weight: 600;
       color: var(--text-color);
       text-transform: uppercase;
-      margin-bottom: 15px;
-      position: relative;
-      padding-bottom: 10px;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 3px;
-        background: var(--accent-color);
-        transition: width 0.4s ease;
-      }
+      margin-bottom: 10px;
     }
 
-    &:hover &__title::after {
-      width: 50px;
+    &__subtitle {
+      font-family: "Montserrat", sans-serif;
+      font-size: var(--card-text-font-size);
+      color: var(--premium-accent);
+      margin-bottom: 15px;
     }
 
     &__price {
+      font-family: "Oswald", sans-serif;
       font-size: var(--card-price-font-size);
-      font-weight: bold;
+      font-weight: 700;
       color: var(--accent-color);
-      margin-bottom: 15px;
-    }
-
-    &__description {
-      font-size: var(--card-text-font-size);
-      color: var(--text-color);
-      line-height: 1.6;
       margin-bottom: 20px;
     }
 
+    &__benefits {
+      list-style: none;
+      margin-bottom: 20px;
+
+      li {
+        font-family: "Montserrat", sans-serif;
+        font-size: var(--card-text-font-size);
+        color: var(--text-color);
+        line-height: 1.8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        i {
+          color: var(--premium-accent);
+          font-size: 1.2rem;
+        }
+      }
+    }
+
     &__button {
-      display: inline-block;
+      font-family: "Oswald", sans-serif;
       padding: var(--button-padding);
       font-size: var(--button-font-size);
-      font-weight: bold;
+      font-weight: 600;
       color: var(--text-color);
       background: var(--accent-color);
-      border-radius: var(--card-border-radius);
+      border-radius: 8px;
       text-decoration: none;
+      text-transform: uppercase;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
       &:hover {
         transform: scale(1.1);
-        box-shadow: 0 5px 15px rgba(var(--accent-color), 0.7);
+        box-shadow: 0 8px 16px rgba(var(--accent-color), 0.5);
       }
     }
   }
@@ -171,39 +171,34 @@
       font-size: 1.5rem;
     }
 
-    &__intro {
-      font-size: var(--card-text-font-size-mobile);
-    }
-
     &__cards {
       grid-template-columns: 1fr;
-      gap: var(--card-gap-mobile);
     }
 
     .price-card {
       padding: 20px;
 
-      &::before {
-        font-size: 1.5rem;
-        top: 8px;
-        right: 8px;
-      }
-
       &__title {
-        font-size: 1.3rem;
-      }
-
-      &__price {
         font-size: 1.5rem;
       }
 
-      &__description {
+      &__subtitle {
         font-size: var(--card-text-font-size-mobile);
       }
 
+      &__price {
+        font-size: 1.8rem;
+      }
+
+      &__benefits {
+        li {
+          font-size: var(--card-text-font-size-mobile);
+        }
+      }
+
       &__button {
-        font-size: 0.9rem;
-        padding: 10px 20px;
+        font-size: 1rem;
+        padding: 12px 24px;
       }
     }
   }
